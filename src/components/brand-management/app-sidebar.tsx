@@ -86,17 +86,18 @@ export function AppSidebar() {
         <SidebarMenu>
           {menuItems.map(({ href, label, icon: Icon }) => (
             <SidebarMenuItem key={href}>
-              <Link href={href} legacyBehavior passHref>
-                <SidebarMenuButton
-                  isActive={pathname === href}
-                  tooltip={{
-                    children: label,
-                  }}
-                >
+              <SidebarMenuButton
+                asChild
+                isActive={pathname === href}
+                tooltip={{
+                  children: label,
+                }}
+              >
+                <Link href={href}>
                   <Icon />
                   <span>{label}</span>
-                </SidebarMenuButton>
-              </Link>
+                </Link>
+              </SidebarMenuButton>
             </SidebarMenuItem>
           ))}
         </SidebarMenu>
