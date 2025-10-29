@@ -71,7 +71,7 @@ export function ProgramCard({ program, brand, onEdit, onDelete }: ProgramCardPro
       <CardFooter>
         <div className="text-sm">
             <span className="text-muted-foreground">Calculated Reward: </span>
-            <span className="font-semibold">${reward}</span>
+            <span className="font-semibold">Rp{reward}</span>
         </div>
       </CardFooter>
     </Card>

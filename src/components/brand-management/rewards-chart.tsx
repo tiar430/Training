@@ -37,7 +37,7 @@ export function RewardsChart({ data }: RewardsChartProps) {
                 fontSize={12}
                 tickLine={false}
                 axisLine={false}
-                tickFormatter={(value) => `$${value}`}
+                tickFormatter={(value) => `Rp${value}`}
               />
               <Tooltip
                 cursor={{ fill: 'hsl(var(--muted))' }}

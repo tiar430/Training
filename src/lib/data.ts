@@ -2,11 +2,11 @@ import { Brand, Program, ProgramStatus, ProgramType } from '@/lib/types';
 import { PlaceHolderImages } from './placeholder-images';
 
 let brands: Brand[] = [
-  { id: 'brand-1', name: 'Innovate Inc.', logo: PlaceHolderImages[0].id },
-  { id: 'brand-2', name: 'EcoVibe', logo: PlaceHolderImages[1].id },
-  { id: 'brand-3', name: 'Fashion Forward', logo: PlaceHolderImages[2].id },
-  { id: 'brand-4', name: 'Apex Sports', logo: PlaceHolderImages[3].id },
-  { id: 'brand-5', name: 'KidzWorld', logo: PlaceHolderImages[4].id },
+  { id: 'brand-1', name: 'Samsung', logo: PlaceHolderImages[0].id },
+  { id: 'brand-2', name: 'Apple', logo: PlaceHolderImages[1].id },
+  { id: 'brand-3', name: 'Xiaomi', logo: PlaceHolderImages[2].id },
+  { id: 'brand-4', name: 'Oppo', logo: PlaceHolderImages[3].id },
+  { id: 'brand-5', name: 'Vivo', logo: PlaceHolderImages[4].id },
 ];
 
 let programs: Program[] = [
