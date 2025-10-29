@@ -8,11 +8,19 @@ export default async function DashboardPage() {
   const programs = await getPrograms();
   const brands = await getBrands();
 
-  const totalRewards = programs.reduce((acc, prog) => acc + (prog.achievement / 100) * 150, 0);
+  const calculateReward = (program: Program) => {
+    if (program.rewardType === 'percentage') {
+      const baseAmount = 1000000; // Example base amount
+      return (program.rewardValue / 100) * baseAmount * (program.achievement / 100);
+    }
+    return program.rewardValue * (program.achievement / 100);
+  };
+
+  const totalRewards = programs.reduce((acc, prog) => acc + calculateReward(prog), 0);
 
   const chartData = brands.map(brand => {
     const brandPrograms = programs.filter(p => p.brandId === brand.id);
-    const totalBrandRewards = brandPrograms.reduce((acc, prog) => acc + (prog.achievement / 100) * 150, 0);
+    const totalBrandRewards = brandPrograms.reduce((acc, prog) => acc + calculateReward(prog), 0);
     return {
       name: brand.name,
       totalRewards: Math.round(totalBrandRewards),
