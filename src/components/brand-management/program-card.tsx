@@ -103,7 +103,7 @@ export function ProgramCard({ program, brand, onEdit, onDelete }: ProgramCardPro
       <CardFooter>
         <div className="text-sm">
             <span className="text-muted-foreground">Calculated Reward: </span>
-            <span className="font-semibold">Rp{reward.toLocaleString()}</span>
+            <span className="font-semibold">Rp{reward.toLocaleString('id-ID')}</span>
         </div>
       </CardFooter>
     </Card>

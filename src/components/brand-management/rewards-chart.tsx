@@ -2,20 +2,20 @@
 
 import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis, Tooltip } from "recharts";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ChartContainer, ChartTooltipContent } from "@/components/ui/chart";
+import { ChartContainer, ChartTooltipContent, ChartConfig } from "@/components/ui/chart";
 
 type RewardsChartProps = {
   data: { name: string; totalRewards: number }[];
 };
 
-export function RewardsChart({ data }: RewardsChartProps) {
-  const chartConfig = {
-    totalRewards: {
-      label: "Total Rewards",
-      color: "hsl(var(--accent))",
-    },
-  };
+const chartConfig = {
+  totalRewards: {
+    label: "Total Rewards",
+    color: "hsl(var(--accent))",
+  },
+} satisfies ChartConfig;
 
+export function RewardsChart({ data }: RewardsChartProps) {
   return (
     <Card className="lg:col-span-4">
       <CardHeader>
@@ -37,11 +37,11 @@ export function RewardsChart({ data }: RewardsChartProps) {
                 fontSize={12}
                 tickLine={false}
                 axisLine={false}
-                tickFormatter={(value) => `Rp${value}`}
+                tickFormatter={(value) => `Rp${new Intl.NumberFormat('id-ID').format(value as number)}`}
               />
               <Tooltip
                 cursor={{ fill: 'hsl(var(--muted))' }}
-                content={<ChartTooltipContent />} 
+                content={<ChartTooltipContent formatter={(value) => `Rp${new Intl.NumberFormat('id-ID').format(value as number)}`} />} 
               />
               <Bar dataKey="totalRewards" fill="var(--color-totalRewards)" radius={[4, 4, 0, 0]} />
             </BarChart>

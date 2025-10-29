@@ -34,7 +34,7 @@ export function StatCards({ totalPrograms, totalBrands, totalRewards }: StatCard
           <Trophy className="h-4 w-4 text-muted-foreground" />
         </CardHeader>
         <CardContent>
-          <div className="text-2xl font-bold">Rp{Math.round(totalRewards).toLocaleString()}</div>
+          <div className="text-2xl font-bold">Rp{Math.round(totalRewards).toLocaleString('id-ID')}</div>
         </CardContent>
       </Card>
     </div>
