@@ -3,7 +3,23 @@ import { getBrands, getPrograms } from '@/lib/data';
 import { PageHeader } from '@/components/brand-management/page-header';
 import { StatCards } from '@/components/brand-management/stat-cards';
 import { RewardsChart } from '@/components/brand-management/rewards-chart';
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyAYuEICRnhaPyq1kD6XrOpsZsCSnFzPMZQ",
+  authDomain: "studio-6882943425-a7322.firebaseapp.com",
+  databaseURL: "https://studio-6882943425-a7322-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "studio-6882943425-a7322",
+  storageBucket: "studio-6882943425-a7322.firebasestorage.app",
+  messagingSenderId: "865979764635",
+  appId: "1:865979764635:web:0a0aeb31aa90a462429b3e"
+};
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
 export default async function DashboardPage() {
   const programs = await getPrograms();
   const brands = await getBrands();

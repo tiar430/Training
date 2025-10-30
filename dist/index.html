@@ -37,7 +37,25 @@
       }
     </style>
   </head>
-  <body>
+  <script type="module"
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyAYuEICRnhaPyq1kD6XrOpsZsCSnFzPMZQ",
+      authDomain: "studio-6882943425-a7322.firebaseapp.com",
+      databaseURL: "https://studio-6882943425-a7322-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "studio-6882943425-a7322",
+      storageBucket: "studio-6882943425-a7322.firebasestorage.app",
+      messagingSenderId: "865979764635",
+      appId: "1:865979764635:web:0a0aeb31aa90a462429b3e"
+    };
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);></script>
+    <body>
     <div id="message">
       <h2>Welcome</h2>
       <h1>Firebase Hosting Setup Complete</h1>
@@ -46,7 +64,6 @@
     </div>
     <p id="load">Firebase SDK Loading&hellip;</p>
 
-    <script>
       document.addEventListener('DOMContentLoaded', function() {
         const loadEl = document.querySelector('#load');
         
